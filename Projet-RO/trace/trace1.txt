@@ -1,0 +1,134 @@
+armandlabernardiere@mbp-de-armand Projet-RO % clear
+armandlabernardiere@mbp-de-armand Projet-RO % /usr/bin/python3 /Users/armandlabernardiere/Desktop/Projet-RO/code.py
+Numéro du problème à étudier (1-12, q pour quitter) : 1
+
+>>> Matrice des coûts (provisions à droite, commandes en bas) :
+╒═════╤═════╤═════╕
+│  30 │  20 │ 100 │
+├─────┼─────┼─────┤
+│  10 │  50 │ 100 │
+├─────┼─────┼─────┤
+│ 100 │ 100 │     │
+╘═════╧═════╧═════╛
+
+Choix de l'algorithme pour la proposition initiale :
+ 1. Nord-Ouest
+ 2. Balas-Hammer
+Votre choix (1/2) : 1
+
+Algorithme : Nord-Ouest
+
+Proposition de transport initiale :
+╒═════╤═════╕
+│ 100 │   0 │
+├─────┼─────┤
+│   0 │ 100 │
+╘═════╧═════╛
+Coût total initial : 8000
+
+Itération 1
+  Dégénérescence : ajout arête fictive P1-C0 (qte=0)
+u = [0, -20] v = [30, 70]
+
+Proposition de transport actuelle :
+╒═════╤═════╕
+│ 100 │   0 │
+├─────┼─────┤
+│   0 │ 100 │
+╘═════╧═════╛
+Table des coûts marginaux :
+╒═══╤═════╕
+│ 0 │ -50 │
+├───┼─────┤
+│ 0 │   0 │
+╘═══╧═════╛
+Ajout de l'arête P0-C1 (marginal -50)
+
+Itération 2
+Cycle: [('C', 1), ('P', 0), ('C', 0), ('P', 1), ('C', 1)]
+  θ = 100, + sur [(0, 1), (1, 0)], − sur [(0, 0), (1, 1)]
+  Dégénérescence : ajout arête fictive P0-C0 (qte=0)
+u = [0, -20] v = [30, 20]
+
+Proposition de transport actuelle :
+╒═════╤═════╕
+│   0 │ 100 │
+├─────┼─────┤
+│ 100 │   0 │
+╘═════╧═════╛
+Table des coûts marginaux :
+╒═══╤════╕
+│ 0 │  0 │
+├───┼────┤
+│ 0 │ 50 │
+╘═══╧════╛
+Solution optimale
+
+Proposition de transport OPTIMALE :
+╒═════╤═════╕
+│   0 │ 100 │
+├─────┼─────┤
+│ 100 │   0 │
+╘═════╧═════╛
+Coût total optimal : 3000
+
+Tester un autre problème ? (o/n) : o
+Numéro du problème à étudier (1-12, q pour quitter) : 1
+
+>>> Matrice des coûts (provisions à droite, commandes en bas) :
+╒═════╤═════╤═════╕
+│  30 │  20 │ 100 │
+├─────┼─────┼─────┤
+│  10 │  50 │ 100 │
+├─────┼─────┼─────┤
+│ 100 │ 100 │     │
+╘═════╧═════╧═════╛
+
+Choix de l'algorithme pour la proposition initiale :
+ 1. Nord-Ouest
+ 2. Balas-Hammer
+Votre choix (1/2) : 2
+
+Algorithme : Balas-Hammer
+Pénalités lignes : [10, 40]
+Pénalités colonnes : [20, 30]
+Pénalités lignes : [0, -1]
+Pénalités colonnes : [-1, 0]
+
+Proposition de transport initiale :
+╒═════╤═════╕
+│   0 │ 100 │
+├─────┼─────┤
+│ 100 │   0 │
+╘═════╧═════╛
+Coût total initial : 3000
+
+Itération 1
+  Dégénérescence : ajout arête fictive P0-C0 (qte=0)
+u = [0, -20] v = [30, 20]
+
+Proposition de transport actuelle :
+╒═════╤═════╕
+│   0 │ 100 │
+├─────┼─────┤
+│ 100 │   0 │
+╘═════╧═════╛
+Table des coûts marginaux :
+╒═══╤════╕
+│ 0 │  0 │
+├───┼────┤
+│ 0 │ 50 │
+╘═══╧════╛
+Solution optimale
+
+Proposition de transport OPTIMALE :
+╒═════╤═════╕
+│   0 │ 100 │
+├─────┼─────┤
+│ 100 │   0 │
+╘═════╧═════╛
+Coût total optimal : 3000
+
+Tester un autre problème ? (o/n) : 
+
+

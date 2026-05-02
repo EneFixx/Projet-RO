@@ -1,0 +1,182 @@
+armandlabernardiere@mbp-de-armand Projet-RO % clear
+armandlabernardiere@mbp-de-armand Projet-RO % /usr/bin/python3 /Users/armandlabernardiere/Desktop/Projet-RO/code.py
+Numéro du problème à étudier (1-12, q pour quitter) : 5
+
+>>> Matrice des coûts (provisions à droite, commandes en bas) :
+╒════╤════╤════╤════╕
+│  5 │  7 │  8 │ 25 │
+├────┼────┼────┼────┤
+│  6 │  8 │  5 │ 25 │
+├────┼────┼────┼────┤
+│  6 │  7 │  7 │ 25 │
+├────┼────┼────┼────┤
+│ 35 │ 20 │ 20 │    │
+╘════╧════╧════╧════╛
+
+Choix de l'algorithme pour la proposition initiale :
+ 1. Nord-Ouest
+ 2. Balas-Hammer
+Votre choix (1/2) : 1
+
+Algorithme : Nord-Ouest
+
+Proposition de transport initiale :
+╒════╤════╤════╕
+│ 25 │  0 │  0 │
+├────┼────┼────┤
+│ 10 │ 15 │  0 │
+├────┼────┼────┤
+│  0 │  5 │ 20 │
+╘════╧════╧════╛
+Coût total initial : 480
+
+Itération 1
+u = [0, 1, 0] v = [5, 7, 7]
+
+Proposition de transport actuelle :
+╒════╤════╤════╕
+│ 25 │  0 │  0 │
+├────┼────┼────┤
+│ 10 │ 15 │  0 │
+├────┼────┼────┤
+│  0 │  5 │ 20 │
+╘════╧════╧════╛
+Table des coûts marginaux :
+╒═══╤═══╤════╕
+│ 0 │ 0 │  1 │
+├───┼───┼────┤
+│ 0 │ 0 │ -3 │
+├───┼───┼────┤
+│ 1 │ 0 │  0 │
+╘═══╧═══╧════╛
+Ajout de l'arête P1-C2 (marginal -3)
+
+Itération 2
+Cycle: [('C', 2), ('P', 1), ('C', 1), ('P', 2), ('C', 2)]
+  θ = 15, + sur [(1, 2), (2, 1)], − sur [(1, 1), (2, 2)]
+u = [0, 1, 3] v = [5, 4, 4]
+
+Proposition de transport actuelle :
+╒════╤════╤════╕
+│ 25 │  0 │  0 │
+├────┼────┼────┤
+│ 10 │  0 │ 15 │
+├────┼────┼────┤
+│  0 │ 20 │  5 │
+╘════╧════╧════╛
+Table des coûts marginaux :
+╒════╤═══╤═══╕
+│  0 │ 3 │ 4 │
+├────┼───┼───┤
+│  0 │ 3 │ 0 │
+├────┼───┼───┤
+│ -2 │ 0 │ 0 │
+╘════╧═══╧═══╛
+Ajout de l'arête P2-C0 (marginal -2)
+
+Itération 3
+Cycle: [('P', 2), ('C', 0), ('P', 1), ('C', 2), ('P', 2)]
+  θ = 5, + sur [(2, 0), (1, 2)], − sur [(1, 0), (2, 2)]
+u = [0, 1, 1] v = [5, 6, 4]
+
+Proposition de transport actuelle :
+╒════╤════╤════╕
+│ 25 │  0 │  0 │
+├────┼────┼────┤
+│  5 │  0 │ 20 │
+├────┼────┼────┤
+│  5 │ 20 │  0 │
+╘════╧════╧════╛
+Table des coûts marginaux :
+╒═══╤═══╤═══╕
+│ 0 │ 1 │ 4 │
+├───┼───┼───┤
+│ 0 │ 1 │ 0 │
+├───┼───┼───┤
+│ 0 │ 0 │ 2 │
+╘═══╧═══╧═══╛
+Solution optimale
+
+Proposition de transport OPTIMALE :
+╒════╤════╤════╕
+│ 25 │  0 │  0 │
+├────┼────┼────┤
+│  5 │  0 │ 20 │
+├────┼────┼────┤
+│  5 │ 20 │  0 │
+╘════╧════╧════╛
+Coût total optimal : 425
+
+Tester un autre problème ? (o/n) : o
+Numéro du problème à étudier (1-12, q pour quitter) : 5
+
+>>> Matrice des coûts (provisions à droite, commandes en bas) :
+╒════╤════╤════╤════╕
+│  5 │  7 │  8 │ 25 │
+├────┼────┼────┼────┤
+│  6 │  8 │  5 │ 25 │
+├────┼────┼────┼────┤
+│  6 │  7 │  7 │ 25 │
+├────┼────┼────┼────┤
+│ 35 │ 20 │ 20 │    │
+╘════╧════╧════╧════╛
+
+Choix de l'algorithme pour la proposition initiale :
+ 1. Nord-Ouest
+ 2. Balas-Hammer
+Votre choix (1/2) : 2
+
+Algorithme : Balas-Hammer
+Pénalités lignes : [2, 1, 1]
+Pénalités colonnes : [1, 0, 2]
+Pénalités lignes : [-1, 1, 1]
+Pénalités colonnes : [0, 1, 2]
+Pénalités lignes : [-1, 2, 1]
+Pénalités colonnes : [0, 1, -1]
+Pénalités lignes : [-1, -1, 1]
+Pénalités colonnes : [0, 0, -1]
+Pénalités lignes : [-1, -1, 0]
+Pénalités colonnes : [-1, 0, -1]
+
+Proposition de transport initiale :
+╒════╤════╤════╕
+│ 25 │  0 │  0 │
+├────┼────┼────┤
+│  5 │  0 │ 20 │
+├────┼────┼────┤
+│  5 │ 20 │  0 │
+╘════╧════╧════╛
+Coût total initial : 425
+
+Itération 1
+u = [0, 1, 1] v = [5, 6, 4]
+
+Proposition de transport actuelle :
+╒════╤════╤════╕
+│ 25 │  0 │  0 │
+├────┼────┼────┤
+│  5 │  0 │ 20 │
+├────┼────┼────┤
+│  5 │ 20 │  0 │
+╘════╧════╧════╛
+Table des coûts marginaux :
+╒═══╤═══╤═══╕
+│ 0 │ 1 │ 4 │
+├───┼───┼───┤
+│ 0 │ 1 │ 0 │
+├───┼───┼───┤
+│ 0 │ 0 │ 2 │
+╘═══╧═══╧═══╛
+Solution optimale
+
+Proposition de transport OPTIMALE :
+╒════╤════╤════╕
+│ 25 │  0 │  0 │
+├────┼────┼────┤
+│  5 │  0 │ 20 │
+├────┼────┼────┤
+│  5 │ 20 │  0 │
+╘════╧════╧════╛
+Coût total optimal : 425
+
+Tester un autre problème ? (o/n) : 

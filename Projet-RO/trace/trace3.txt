@@ -1,0 +1,131 @@
+armandlabernardiere@mbp-de-armand Projet-RO % clear
+armandlabernardiere@mbp-de-armand Projet-RO % /usr/bin/python3 /Users/armandlabernardiere/Desktop/Projet-RO/code.py
+Numéro du problème à étudier (1-12, q pour quitter) : 3
+
+>>> Matrice des coûts (provisions à droite, commandes en bas) :
+╒═════╤══════╤═════╕
+│  30 │   20 │ 600 │
+├─────┼──────┼─────┤
+│  10 │   50 │ 500 │
+├─────┼──────┼─────┤
+│ 100 │ 1000 │     │
+╘═════╧══════╧═════╛
+
+Choix de l'algorithme pour la proposition initiale :
+ 1. Nord-Ouest
+ 2. Balas-Hammer
+Votre choix (1/2) : 1
+
+Algorithme : Nord-Ouest
+
+Proposition de transport initiale :
+╒═════╤═════╕
+│ 100 │ 500 │
+├─────┼─────┤
+│   0 │ 500 │
+╘═════╧═════╛
+Coût total initial : 38000
+
+Itération 1
+u = [0, 30] v = [30, 20]
+
+Proposition de transport actuelle :
+╒═════╤═════╕
+│ 100 │ 500 │
+├─────┼─────┤
+│   0 │ 500 │
+╘═════╧═════╛
+Table des coûts marginaux :
+╒═════╤═══╕
+│   0 │ 0 │
+├─────┼───┤
+│ -50 │ 0 │
+╘═════╧═══╛
+Ajout de l'arête P1-C0 (marginal -50)
+
+Itération 2
+Cycle: [('C', 0), ('P', 1), ('C', 1), ('P', 0), ('C', 0)]
+  θ = 100, + sur [(1, 0), (0, 1)], − sur [(1, 1), (0, 0)]
+u = [0, 30] v = [-20, 20]
+
+Proposition de transport actuelle :
+╒═════╤═════╕
+│   0 │ 600 │
+├─────┼─────┤
+│ 100 │ 400 │
+╘═════╧═════╛
+Table des coûts marginaux :
+╒════╤═══╕
+│ 50 │ 0 │
+├────┼───┤
+│  0 │ 0 │
+╘════╧═══╛
+Solution optimale
+
+Proposition de transport OPTIMALE :
+╒═════╤═════╕
+│   0 │ 600 │
+├─────┼─────┤
+│ 100 │ 400 │
+╘═════╧═════╛
+Coût total optimal : 33000
+
+Tester un autre problème ? (o/n) : o
+Numéro du problème à étudier (1-12, q pour quitter) : 3
+
+>>> Matrice des coûts (provisions à droite, commandes en bas) :
+╒═════╤══════╤═════╕
+│  30 │   20 │ 600 │
+├─────┼──────┼─────┤
+│  10 │   50 │ 500 │
+├─────┼──────┼─────┤
+│ 100 │ 1000 │     │
+╘═════╧══════╧═════╛
+
+Choix de l'algorithme pour la proposition initiale :
+ 1. Nord-Ouest
+ 2. Balas-Hammer
+Votre choix (1/2) : 2
+
+Algorithme : Balas-Hammer
+Pénalités lignes : [10, 40]
+Pénalités colonnes : [20, 30]
+Pénalités lignes : [0, 0]
+Pénalités colonnes : [-1, 30]
+Pénalités lignes : [-1, 0]
+Pénalités colonnes : [-1, 0]
+
+Proposition de transport initiale :
+╒═════╤═════╕
+│   0 │ 600 │
+├─────┼─────┤
+│ 100 │ 400 │
+╘═════╧═════╛
+Coût total initial : 33000
+
+Itération 1
+u = [0, 30] v = [-20, 20]
+
+Proposition de transport actuelle :
+╒═════╤═════╕
+│   0 │ 600 │
+├─────┼─────┤
+│ 100 │ 400 │
+╘═════╧═════╛
+Table des coûts marginaux :
+╒════╤═══╕
+│ 50 │ 0 │
+├────┼───┤
+│  0 │ 0 │
+╘════╧═══╛
+Solution optimale
+
+Proposition de transport OPTIMALE :
+╒═════╤═════╕
+│   0 │ 600 │
+├─────┼─────┤
+│ 100 │ 400 │
+╘═════╧═════╛
+Coût total optimal : 33000
+
+Tester un autre problème ? (o/n) : 
