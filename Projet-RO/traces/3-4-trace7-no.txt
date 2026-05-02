@@ -1,0 +1,99 @@
+Numéro du problème à étudier (1-12, q pour quitter) : 
+>>> Matrice des coûts (provisions à droite, commandes en bas) :
+╒═════╤═════╤═════╕
+│  50 │  20 │ 100 │
+├─────┼─────┼─────┤
+│  10 │  50 │ 200 │
+├─────┼─────┼─────┤
+│  50 │  40 │ 100 │
+├─────┼─────┼─────┤
+│  45 │  35 │ 200 │
+├─────┼─────┼─────┤
+│ 300 │ 300 │     │
+╘═════╧═════╧═════╛
+
+Choix de l'algorithme pour la proposition initiale :
+ 1. Nord-Ouest
+ 2. Balas-Hammer
+Votre choix (1/2) : 
+Algorithme : Nord-Ouest
+
+Proposition de transport initiale :
+╒═════╤═════╕
+│ 100 │   0 │
+├─────┼─────┤
+│ 200 │   0 │
+├─────┼─────┤
+│   0 │ 100 │
+├─────┼─────┤
+│   0 │ 200 │
+╘═════╧═════╛
+Coût total initial : 18000
+
+Itération 1
+  Dégénérescence : ajout arête fictive P0-C1 (qte=0)
+u = [0, -40, 20, 15] v = [50, 20]
+
+Proposition de transport actuelle :
+╒═════╤═════╕
+│ 100 │   0 │
+├─────┼─────┤
+│ 200 │   0 │
+├─────┼─────┤
+│   0 │ 100 │
+├─────┼─────┤
+│   0 │ 200 │
+╘═════╧═════╛
+Table des coûts marginaux :
+╒═════╤════╕
+│   0 │  0 │
+├─────┼────┤
+│   0 │ 70 │
+├─────┼────┤
+│ -20 │  0 │
+├─────┼────┤
+│ -20 │  0 │
+╘═════╧════╛
+Ajout de l'arête P2-C0 (marginal -20)
+
+Itération 2
+Cycle: [('C', 0), ('P', 2), ('C', 1), ('P', 0), ('C', 0)]
+  θ = 100, + sur [(2, 0), (0, 1)], − sur [(2, 1), (0, 0)]
+  Dégénérescence : ajout arête fictive P2-C1 (qte=0)
+u = [0, -20, 20, 15] v = [30, 20]
+
+Proposition de transport actuelle :
+╒═════╤═════╕
+│   0 │ 100 │
+├─────┼─────┤
+│ 200 │   0 │
+├─────┼─────┤
+│ 100 │   0 │
+├─────┼─────┤
+│   0 │ 200 │
+╘═════╧═════╛
+Table des coûts marginaux :
+╒════╤════╕
+│ 20 │  0 │
+├────┼────┤
+│  0 │ 50 │
+├────┼────┤
+│  0 │  0 │
+├────┼────┤
+│  0 │  0 │
+╘════╧════╛
+Solution optimale
+
+Proposition de transport OPTIMALE :
+╒═════╤═════╕
+│   0 │ 100 │
+├─────┼─────┤
+│ 200 │   0 │
+├─────┼─────┤
+│ 100 │   0 │
+├─────┼─────┤
+│   0 │ 200 │
+╘═════╧═════╛
+Coût total optimal : 16000
+
+Tester un autre problème ? (o/n) : Au revoir !

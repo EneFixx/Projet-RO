@@ -1,0 +1,80 @@
+Numéro du problème à étudier (1-12, q pour quitter) : 
+>>> Matrice des coûts (provisions à droite, commandes en bas) :
+╒═════╤═════╤═════╕
+│  50 │  20 │ 100 │
+├─────┼─────┼─────┤
+│  10 │  50 │ 200 │
+├─────┼─────┼─────┤
+│  50 │  40 │ 100 │
+├─────┼─────┼─────┤
+│  45 │  35 │ 200 │
+├─────┼─────┼─────┤
+│ 300 │ 300 │     │
+╘═════╧═════╧═════╛
+
+Choix de l'algorithme pour la proposition initiale :
+ 1. Nord-Ouest
+ 2. Balas-Hammer
+Votre choix (1/2) : 
+Algorithme : Balas-Hammer
+Pénalités lignes : [30, 40, 10, 10]
+Pénalités colonnes : [35, 15]
+Pénalités lignes : [30, -1, 10, 10]
+Pénalités colonnes : [5, 15]
+Pénalités lignes : [-1, -1, 10, 10]
+Pénalités colonnes : [5, 5]
+Pénalités lignes : [-1, -1, -1, 10]
+Pénalités colonnes : [0, 0]
+Pénalités lignes : [-1, -1, -1, 0]
+Pénalités colonnes : [0, -1]
+
+Proposition de transport initiale :
+╒═════╤═════╕
+│   0 │ 100 │
+├─────┼─────┤
+│ 200 │   0 │
+├─────┼─────┤
+│   0 │ 100 │
+├─────┼─────┤
+│ 100 │ 100 │
+╘═════╧═════╛
+Coût total initial : 16000
+
+Itération 1
+u = [0, -20, 20, 15] v = [30, 20]
+
+Proposition de transport actuelle :
+╒═════╤═════╕
+│   0 │ 100 │
+├─────┼─────┤
+│ 200 │   0 │
+├─────┼─────┤
+│   0 │ 100 │
+├─────┼─────┤
+│ 100 │ 100 │
+╘═════╧═════╛
+Table des coûts marginaux :
+╒════╤════╕
+│ 20 │  0 │
+├────┼────┤
+│  0 │ 50 │
+├────┼────┤
+│  0 │  0 │
+├────┼────┤
+│  0 │  0 │
+╘════╧════╛
+Solution optimale
+
+Proposition de transport OPTIMALE :
+╒═════╤═════╕
+│   0 │ 100 │
+├─────┼─────┤
+│ 200 │   0 │
+├─────┼─────┤
+│   0 │ 100 │
+├─────┼─────┤
+│ 100 │ 100 │
+╘═════╧═════╛
+Coût total optimal : 16000
+
+Tester un autre problème ? (o/n) : Au revoir !
